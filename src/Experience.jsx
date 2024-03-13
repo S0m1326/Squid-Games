@@ -12,8 +12,6 @@ const Experience = () => {
     // const boxRef5 = useRef(null);
     // const boxRef6 = useRef(null);
     // const boxRef7 = useRef(null);
-    // const boxRef8 = useRef(null);
-
 
     /*useFrame((state, delta)=>{
         boxRef.current.position.y = Math.cos(state.clock.getElapsedTime());
@@ -32,15 +30,12 @@ const Experience = () => {
         boxRef6.current.position.y = 5
         
         boxRef7.current.position.x = 5
-        
-        boxRef8.current.position.x = 5
-        boxRef8.current.position.y = 5
     })*/
 
     return (
         <>
             <ambientLight intensity={0.5} />
-            <directionalLight position={[10, 10, 5]} intensity={2} />
+            <pointLight position={[10, 10, 5]} intensity={2} />
             <OrbitControls makeDefault />
             <World />
         {/* <mesh ref={boxRef}>
@@ -75,11 +70,6 @@ const Experience = () => {
 
     )
 }
-
-/*<mesh ref={boxRef2}>
-                <coneGeometry args={[2, 4, 32]} />
-                <meshDistanceMaterial/>
-            </mesh>*/
 
 export default Experience;
 
