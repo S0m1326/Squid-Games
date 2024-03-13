@@ -6,10 +6,21 @@ export default function World(props) {
     const PATH = "/assets/textures/floor/";
     
     const propsTexture = useTexture({
-        map: PATH + "coast_sand_01_diff_1k.jpg",
-        displacementMap: PATH + "coast_sand_01_disp_1k.png",
-        normalMap: PATH + "coast_sand_01_nor_gl_1k.jpg",
-        roughnessMap: PATH + "coast_sand_01_rough_1k.jpg",
+        // map: PATH + "/land/coast_sand_01_diff_1k.jpg",
+        // displacementMap: PATH + "/land/coast_sand_01_disp_1k.png",
+        // normalMap: PATH + "/land/coast_sand_01_nor_gl_1k.jpg",
+        // roughnessMap: PATH + "/land/coast_sand_01_rough_1k.jpg",
+
+        // map: PATH + "/metal/metal_plate_diff_1k.jpg",
+        // displacementMap: PATH + "/metal/metal_plate_disp_1k.png",
+        // normalMap: PATH + "/metal/metal_plate_nor_gl_1k.jpg",
+        // roughnessMap: PATH + "/metal/metal_plate_rough_1k.jpg",
+
+        map: PATH + "/grass/leafy_grass_diff_1k.jpg",
+        displacementMap: PATH + "/grass/leafy_grass_disp_1k.png",
+        metalnessMap: PATH +"/grass/leafy_grass_mask_1k.png",
+        normalMap: PATH + "/grass/leafy_grass_nor_gl_1k.jpg",
+        roughnessMap: PATH + "/grass/leafy_grass_rough_1k.jpg",
     })
 
     propsTexture.map.repeat.set(4, 64);
@@ -17,6 +28,9 @@ export default function World(props) {
 
     propsTexture.displacementMap.repeat.set(4, 64);
     propsTexture.displacementMap.wrapS = propsTexture.displacementMap.wrapT = RepeatWrapping;
+
+    propsTexture.metalnessMap.repeat.set(4, 64);
+    propsTexture.metalnessMap.wrapS = propsTexture.metalnessMap.wrapT = RepeatWrapping;
 
     propsTexture.normalMap.repeat.set(4, 64);
     propsTexture.normalMap.wrapS = propsTexture.normalMap.wrapT = RepeatWrapping;
