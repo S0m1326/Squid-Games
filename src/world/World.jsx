@@ -1,59 +1,57 @@
-import { useGLTF, useTexture } from "@react-three/drei"
-import { Mesh, RepeatWrapping } from "three";
+import React, { useRef } from 'react'
+import { useGLTF, useTexture } from '@react-three/drei'
 
-export default function World(props) {
-    const {nodes, materials} = useGLTF("/assets/models/world/WorldSquidGames.glb");
-    const PATH = "/assets/textures/floor/";
-    
-    const propsTexture = useTexture({
-        // map: PATH + "/land/coast_sand_01_diff_1k.jpg",
-        // displacementMap: PATH + "/land/coast_sand_01_disp_1k.png",
-        // normalMap: PATH + "/land/coast_sand_01_nor_gl_1k.jpg",
-        // roughnessMap: PATH + "/land/coast_sand_01_rough_1k.jpg",
+export function World(props) {
+  const { nodes, materials } = useGLTF('/assets/models/world/Nivel1.glb')
+  const PATH = '/assets/textures/floor/'
 
-        // map: PATH + "/metal/metal_plate_diff_1k.jpg",
-        // displacementMap: PATH + "/metal/metal_plate_disp_1k.png",
-        // normalMap: PATH + "/metal/metal_plate_nor_gl_1k.jpg",
-        // roughnessMap: PATH + "/metal/metal_plate_rough_1k.jpg",
+  const propsTexture = useTexture({
+    map: PATH + "clay_plaster_diff_1k.jpg",
+    displacementMap: PATH + "clay_plaster_disp_1k.png",
+    normalMap: PATH + "clay_plaster_nor_gl_1k.jpg",
+    roughnessMap: PATH + "clay_plaster_rough_1k.jpg"
+  })
 
-        // map: PATH + "/grass/leafy_grass_diff_1k.jpg",
-        // displacementMap: PATH + "/grass/leafy_grass_disp_1k.png",
-        // normalMap: PATH + "/grass/leafy_grass_nor_gl_1k.jpg",
-        // roughnessMap: PATH + "/grass/leafy_grass_rough_1k.jpg",
-
-        // map: PATH + "/rock/grassy_cobblestone_diff_1k.jpg",
-        // displacementMap: PATH + "/rock/grassy_cobblestone_disp_1k.png",
-        // normalMap: PATH + "/rock/grassy_cobblestone_nor_gl_1k.jpg",
-        // roughnessMap: PATH + "/rock/grassy_cobblestone_rough_1k.jpg",
-
-        map: PATH + "/sand/sand_02_diff_1k.jpg",
-        displacementMap: PATH + "/sand/sand_02_disp_1k.png",
-        normalMap: PATH + "/sand/sand_02_nor_gl_1k.jpg",
-        roughnessMap: PATH + "/sand/sand_02_rough_1k.jpg",
-    })
-
-    propsTexture.map.repeat.set(4, 64);
-    propsTexture.map.wrapS = propsTexture.map.wrapT = RepeatWrapping;
-
-    propsTexture.displacementMap.repeat.set(4, 64);
-    propsTexture.displacementMap.wrapS = propsTexture.displacementMap.wrapT = RepeatWrapping;
-
-    propsTexture.normalMap.repeat.set(4, 64);
-    propsTexture.normalMap.wrapS = propsTexture.normalMap.wrapT = RepeatWrapping;
-
-    propsTexture.roughnessMap.repeat.set(4, 64);
-    propsTexture.roughnessMap.wrapS = propsTexture.roughnessMap.wrapT = RepeatWrapping;
-
-    return (
-        <group {...props} dispose={null}>
-          <group>
-            <mesh geometry={nodes.Walls.geometry} material={materials.Material} />
-            <mesh geometry={nodes.Floor.geometry}>
-            <meshStandardMaterial {...propsTexture}/>
-            </mesh>
-          </group>
-        </group>
-    );
+  return (
+    <group {...props} dispose={null}>
+      <mesh geometry={nodes.Planeta.geometry} 
+      material={nodes.Planeta.material} />
+        
+        {/* <meshStandardMaterial
+          map={propsTexture.map}
+          displacementMap={propsTexture.displacementMap}
+          normalMap={propsTexture.normalMap}
+          roughnessMap={propsTexture.roughnessMap}
+        /> */}
+      {/* </mesh> */}
+      <mesh
+        geometry={nodes.CuerpoBase.geometry}
+        material={nodes.CuerpoBase.material}
+      />
+      <mesh
+        geometry={nodes.Base.geometry}
+        material={nodes.Base.material}
+      />
+      <mesh geometry={nodes.Cueva.geometry} 
+      material={nodes.Cueva.material} />
+        {/* <meshStandardMaterial
+          map={propsTexture.map}
+          displacementMap={propsTexture.displacementMap}
+          normalMap={propsTexture.normalMap}
+          roughnessMap={propsTexture.roughnessMap}
+        /> */}
+      {/* </mesh> */}
+      <mesh geometry={nodes.Montaña.geometry} 
+      material={nodes.Montaña.material} />
+        {/* <meshStandardMaterial
+          map={propsTexture.map}
+          displacementMap={propsTexture.displacementMap}
+          normalMap={propsTexture.normalMap}
+          roughnessMap={propsTexture.roughnessMap}
+        /> */}
+      {/* </mesh> */}
+    </group>
+  )
 }
 
-useGLTF.preload("/assets/models/world/WorldSquidGames.glb");
+useGLTF.preload('/assets/models/world/Nivel1.glb');

@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "react-scripts start"
+    "dev": "react-scripts start",
+    "build": "react-scripts build",
+    "deploy": "vercel --prod"
   },
   "keywords": [],
   "author": "",
@@ -13,10 +15,12 @@
     "@react-three/drei": "^9.99.5",
     "@react-three/fiber": "^8.15.16",
     "@types/three": "^0.162.0",
+    "dependencies": "^0.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "^5.0.1",
-    "three": "^0.162.0"
+    "three": "^0.162.0",
+    "vercel": "^33.5.3"
   },
   "browserslist": {
     "production": [
