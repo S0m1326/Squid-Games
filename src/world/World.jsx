@@ -3,53 +3,75 @@ import { useGLTF, useTexture } from '@react-three/drei'
 
 export function World(props) {
   const { nodes, materials } = useGLTF('/assets/models/world/Nivel1.glb')
-  const PATH = '/assets/textures/floor/'
-
-  const propsTexture = useTexture({
-    map: PATH + "clay_plaster_diff_1k.jpg",
-    displacementMap: PATH + "clay_plaster_disp_1k.png",
-    normalMap: PATH + "clay_plaster_nor_gl_1k.jpg",
-    roughnessMap: PATH + "clay_plaster_rough_1k.jpg"
-  })
 
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Planeta.geometry} 
-      material={nodes.Planeta.material} />
-        
-        {/* <meshStandardMaterial
-          map={propsTexture.map}
-          displacementMap={propsTexture.displacementMap}
-          normalMap={propsTexture.normalMap}
-          roughnessMap={propsTexture.roughnessMap}
-        /> */}
-      {/* </mesh> */}
       <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Planeta.geometry}
+        material={nodes.Planeta.material}
+      />
+      <mesh
+        castShadow
+        receiveShadow
         geometry={nodes.CuerpoBase.geometry}
         material={nodes.CuerpoBase.material}
       />
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes.Base.geometry}
         material={nodes.Base.material}
       />
-      <mesh geometry={nodes.Cueva.geometry} 
-      material={nodes.Cueva.material} />
-        {/* <meshStandardMaterial
-          map={propsTexture.map}
-          displacementMap={propsTexture.displacementMap}
-          normalMap={propsTexture.normalMap}
-          roughnessMap={propsTexture.roughnessMap}
-        /> */}
-      {/* </mesh> */}
-      <mesh geometry={nodes.Montaña.geometry} 
-      material={nodes.Montaña.material} />
-        {/* <meshStandardMaterial
-          map={propsTexture.map}
-          displacementMap={propsTexture.displacementMap}
-          normalMap={propsTexture.normalMap}
-          roughnessMap={propsTexture.roughnessMap}
-        /> */}
-      {/* </mesh> */}
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Cueva.geometry}
+        material={nodes.Cueva.material}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Montaña.geometry}
+        material={nodes.Montaña.material}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Telescopio.geometry}
+        material={nodes.Telescopio.material}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Cubo.geometry}
+        material={nodes.Cubo.material}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Cono.geometry}
+        material={nodes.Cono.material}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Dona.geometry}
+        material={nodes.Dona.material}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.TelescopioInt.geometry}
+        material={nodes.TelescopioInt.material}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Soporte.geometry}
+        material={nodes.Soporte.material}
+      />
     </group>
   )
 }
