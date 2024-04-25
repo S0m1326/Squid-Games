@@ -7,68 +7,56 @@ export function World(props) {
   return (
     <group {...props} dispose={null}>
       <mesh
-        castShadow
-        receiveShadow
+        receiveShadow={true}
         geometry={nodes.Planeta.geometry}
         material={nodes.Planeta.material}
       />
       <mesh
-        castShadow
-        receiveShadow
+        castShadow={true}
         geometry={nodes.CuerpoBase.geometry}
         material={nodes.CuerpoBase.material}
       />
       <mesh
-        castShadow
-        receiveShadow
+        castShadow={true}
         geometry={nodes.Base.geometry}
         material={nodes.Base.material}
       />
       <mesh
-        castShadow
-        receiveShadow
+        castShadow={true}
         geometry={nodes.Cueva.geometry}
         material={nodes.Cueva.material}
       />
       <mesh
-        castShadow
-        receiveShadow
+        castShadow={true}
         geometry={nodes.Montaña.geometry}
         material={nodes.Montaña.material}
       />
       <mesh
-        castShadow
-        receiveShadow
+        castShadow={true}
         geometry={nodes.Telescopio.geometry}
         material={nodes.Telescopio.material}
       />
       <mesh
-        castShadow
-        receiveShadow
+        castShadow={true}
         geometry={nodes.Cubo.geometry}
         material={nodes.Cubo.material}
       />
       <mesh
-        castShadow
-        receiveShadow
+        castShadow={true}
         geometry={nodes.Cono.geometry}
         material={nodes.Cono.material}
       />
       <mesh
-        castShadow
-        receiveShadow
+        castShadow={true}
         geometry={nodes.Dona.geometry}
         material={nodes.Dona.material}
       />
       <mesh
-        castShadow
-        receiveShadow
         geometry={nodes.TelescopioInt.geometry}
         material={nodes.TelescopioInt.material}
       />
       <mesh
-        castShadow
-        receiveShadow
+        castShadow={true}
         geometry={nodes.Soporte.geometry}
         material={nodes.Soporte.material}
       />
